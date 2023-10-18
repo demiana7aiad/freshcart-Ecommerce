@@ -1,0 +1,13 @@
+<div  class="w-75 mx-auto mt-3 rounded shadow p-4 h5 fw-bold ">
+    <form [formGroup]="orderForm" (ngSubmit)="handleForm()" class="ng-untouched ng-pristine ng-invalid">
+      
+        <label  for="details">Details :</label>
+        <input  type="text" id="details" formcontrolname="details" class="form-control mb-3 ng-untouched ng-pristine ng-invalid">
+        <label  for="phone">phone :</label>
+        <input  type="tel" id="phone" formcontrolname="phone" class="form-control mb-3 ng-untouched ng-pristine ng-invalid">
+        <label  for="city">city :</label>
+        <input type="text" id="city" formcontrolname="city" class="form-control mb-3 ng-untouched ng-pristine ng-invalid">
+        <button  class="btn btn-outline-info w-100 my-5 h5 " >Pay now</button>
+    
+    </form>
+</div>

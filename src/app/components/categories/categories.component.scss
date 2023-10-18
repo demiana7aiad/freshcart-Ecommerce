@@ -1,0 +1,19 @@
+.container{
+    background-color:  #05525e;
+}
+.card-img{
+    background-color:#aceaf0 ;
+}
+.text{
+    color: #05525e;
+}
+.card{
+    transition: all .5s;
+     padding: 4px ;
+    
+}
+.card:hover {
+    box-shadow: 1px 1px 10px #aceaf0;
+
+     
+}

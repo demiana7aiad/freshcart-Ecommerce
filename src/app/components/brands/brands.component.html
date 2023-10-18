@@ -1,0 +1,17 @@
+<div class=" m-5 p-5">
+<div class="container p-5 rounded shadow" *ngIf="brands.length >0">
+    <h1 class="text text-center mb-5 fw-bold">All Brands</h1>
+    <div  class="row g-4">
+        <div *ngFor="let Brands of brands " class="col-md-3 ng-star-inserted">
+            <div class="card">
+                <div  class="card-img">
+                    <img [src]="Brands.image" [alt]="Brands.name" class="img-fluid" >
+                </div>
+                <div class="card-body">
+                    <p class="text-center">{{Brands.name}}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+</div>

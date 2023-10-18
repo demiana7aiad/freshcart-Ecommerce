@@ -1,0 +1,17 @@
+.container{
+    background-color:  #013941;
+    align-items: center;
+}
+
+.text{
+    color: #aceaf0;
+}
+.card{
+    transition: all .5s;
+    cursor: pointer;
+    padding: 4px ;
+    
+}
+.card:hover {
+    box-shadow: 1px 1px 10px #aceaf0;
+}

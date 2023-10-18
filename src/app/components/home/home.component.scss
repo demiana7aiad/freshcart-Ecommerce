@@ -1,0 +1,29 @@
+.container{
+    background-color:  #013941;
+}
+.category{
+    background-color:  #013941;
+}
+.text{
+    color: #aceaf0;
+}
+.product{
+    overflow: hidden;
+    
+    &:hover{
+        .main-btn{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .main-btn{
+        transform: translateY(200%);
+        transition: all .5s;
+        opacity: 0;
+        background-color: #aceaf0;
+        color: #000;
+    
+    }
+
+}

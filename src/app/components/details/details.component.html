@@ -1,0 +1,37 @@
+<div class="container p-5 " *ngIf="productDetails">
+    <div class="row align-items-center" >
+        <div class="col-md-4">
+
+            <owl-carousel-o [options]="productDetailsOptions">
+                <ng-container *ngFor="let path of productDetails.images">
+                  <ng-template carouselSlide >
+                    <img  class="w-100" [src]="path" >
+                  </ng-template>
+                </ng-container>
+            
+              </owl-carousel-o>
+        </div>
+
+        <div class="col-md-8">
+
+          <div>
+            <h2 class="fw-bold text">{{productDetails.title}}</h2>
+            <p class="text">{{productDetails.description}}</p>
+            <div class="d-flex align-items-center justify-content-between text">
+                <span >{{productDetails.price | currency: 'EGP'}}</span>
+                <span>
+                    <i class="fas fa-star rating-color"></i>
+                    {{productDetails.ratingsAverage}}
+                </span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mt-4 " >
+                  <button  (click)="addProduct(productDetails._id , btnAdd)" #btnAdd class="w-75 main-btn mt-4 py-2 btn "> + Add</button>
+                    <i class="fa-solid fa-heart fa-xl" style="color: #000000;"></i>
+                </div>
+          </div>
+
+        </div>
+
+</div>
+</div>

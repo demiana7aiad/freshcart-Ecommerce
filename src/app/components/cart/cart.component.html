@@ -1,0 +1,46 @@
+<div class="container py-5 my-5 p-5 mx-auto rounded shadow" *ngIf="cartDetails;else msg">
+    <div >
+        <div class="d-flex mb-4 justify-content-between">
+            <h2 class="fw-bold text">Cart Shop</h2>
+            <button [routerLink]="['/payment', cartDetails._id]" class="btn btn-primary btn-lg ng-star-inserted "> check out </button>
+        </div>
+        
+        <div  class="d-flex justify-content-between align-items-center ng-star-inserted mb-3 text">
+            <h4  > total price: <span class="text-dark">{{cartDetails.totalCartPrice }}</span> </h4>
+            <h4  >total number of items: <span class="text-dark">{{cartDetails.products.length}}</span> </h4>
+        </div>
+
+         <div class="row border-bottom my-3 d-flex align-items-center p-2" *ngFor="let item of cartDetails.products">
+            <div class="col-md-2">
+                <img class="w-100" [src]="item.product.imageCover" [alt]="item.product.title">
+            </div>
+            <div class="col-md-10 d-flex justify-content-between text">
+                <div>
+                    <h4 class="fw-bold ">{{item.product.title}}</h4>
+                    <h5 class="fw-bold small">{{item.price | currency : "EGP "}}</h5>
+                    <button (click)="removeItem(item.product._id)" class="btn btn-sm m-0 p-0 text-danger">
+                        <i class="fa fa-trash-can"> Remove</i>
+                    </button>
+                </div>
+               <div>
+                <button (click)="changeCount(item.count + 1 ,item.product._id )" class="btn btn-count btn-md border-success text"> + </button>
+
+                <span class="mx-3">{{ item.count }}</span>
+
+                <button (click)="changeCount(item.count - 1 , item.product._id)"  class="btn btn-count btn-md border-success text"> - </button>
+
+               </div>
+
+            </div>
+            
+         </div>
+
+    </div>
+  
+     <button (click)="clear()" class=" btn-outline-info border-success d-block mx-auto btn-xl m-2 p-2 align-items-center fs-4 ">clear your cart</button>
+</div>
+
+<ng-template #msg>
+                <h2 class="fw-bold ng-star-inserted py-5 my-5 p-5 mx-auto bg-light rounded shadow ">Cart Shop</h2>
+    <p  class="mx-auto h2 ng-star-inserted fw-bold py-5 my-5 p-5 bg-light rounded shadow">your cart is empty</p>
+</ng-template>

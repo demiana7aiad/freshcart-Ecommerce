@@ -1,0 +1,14 @@
+<div class="container ng-star-inserted p-5 rounded shadow">
+    <div class="row g-4">
+        <div *ngFor="let category of categoryData " class="col-sm-12 col-md-4 ng-star-inserted col">
+            <div [routerLink]="['/categorydetails', category._id]" class="card mt-3">
+                <div class="card-img h-100 w-100">
+                    <img [src]="category.image" [alt]="category.name" class="img-fluid  w-100" style="height: 300px">
+                    </div>
+                    <div class="card-body">
+                        <p  class="text h3 text-center">{{category.name}}</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

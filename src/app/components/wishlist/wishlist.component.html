@@ -1,0 +1,35 @@
+
+<div class="container py-5 my-5 p-5 mt-5 mx-auto  rounded shadow"*ngIf="products.length >0" >
+    <div>
+        <div class="d-flex mb-4 justify-content-between">
+            <h2 class="fw-bold text">My Wish List</h2>
+              </div>
+
+         <div class="row border-bottom my-3 d-flex align-items-center p-2" *ngFor="let item of products">
+            <div class="col-md-2">
+                <img class="w-100" [src]="item.imageCover" [alt]="item.title">
+            </div>
+            <div class="col-md-10 mt-2 mb-2 d-flex justify-content-between">
+                <div>
+                    <h4 class="fw-bold mb-2 text ">{{item.title}}</h4>
+                    <h5 class="fw-bold small text mb-2">{{item.price | currency : "EGP "}}</h5>
+                    <button (click)="removeWishlist(item._id)" class="btn btn-sm m-0 p-0 text-danger">
+                        <i class="fa fa-trash-can"> Remove</i>
+                    </button>
+                </div>
+               <div>
+                <button (click)="addProduct(item._id , btnAdd)" #btnAdd class="btn-count btn btn-lg d-block mx-auto border-success"> add To Cart</button>
+          
+               </div>
+
+            </div>
+            
+         </div>
+
+    </div>
+  </div>
+
+<ng-template #msg>
+                <h2 class="fw-bold ng-star-inserted py-5 my-5 p-5 mx-auto bg-light rounded shadow ">Cart Shop</h2>
+    <p  class="mx-auto h2 ng-star-inserted fw-bold py-5 my-5 p-5 bg-light rounded shadow">your cart is empty</p>
+</ng-template>
